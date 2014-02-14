@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+<script type="text/javascript" src="G:\gc\project\jquery-1.9.1.js"></script>
+<script>
+$(document).ready(function(){
+	//alert('ready..................');
+	$("#js_upload_btn").click(function(){
+		var val = $("#js_upload_file").val();
+		var arrays = val.split("\\");
+		alert(arrays[arrays.length-1]);
+	});
+});
+</script>
+ <body>
+	<form>
+		<input id="js_upload_file" type="file" name="pic" accept="image/gif" />
+		<input id="js_upload_btn" type="button" value="ÉÏ´«"/>
+	</form>
+
+ </body>
+</html>

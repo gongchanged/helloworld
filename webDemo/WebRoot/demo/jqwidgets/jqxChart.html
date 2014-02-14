@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../../scripts/jqwidgets-ver3.2.1/jqwidgets/styles/jqx.base.css" type="text/css" />
+<script type="text/javascript" src="../../scripts/jqwidgets-ver3.2.1/scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../../scripts/jqwidgets-ver3.2.1/jqwidgets/jqxcore.js"></script>
+<script type="text/javascript" src="../../scripts/jqwidgets-ver3.2.1/jqwidgets/jqxchart.js"></script>
+<script type="text/javascript" src="../../scripts/jqwidgets-ver3.2.1/jqwidgets/jqxdata.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    // jqxChart initialization  code goes here.
+	var sampleData = [
+            { Day:'Monday', Keith:30, Erica:15, George: 25},
+            { Day:'Tuesday', Keith:25, Erica:25, George: 30},
+            { Day:'Wednesday', Keith:30, Erica:20, George: 25},
+            { Day:'Thursday', Keith:35, Erica:25, George: 45},
+            { Day:'Friday', Keith:20, Erica:20, George: 25},
+            { Day:'Saturday', Keith:30, Erica:20, George: 30},
+            { Day:'Sunday', Keith:60, Erica:45, George: 90}
+        ];
+    
+	var settings = {
+
+            title: "Fitness & exercise weekly scorecard",
+
+            description: "Time spent in vigorous exercise",
+
+            padding: { left: 5, top: 5, right: 5, bottom: 5 },
+
+            titlePadding: { left: 90, top: 0, right: 0, bottom: 10 },
+
+            source: sampleData,
+
+            categoryAxis:
+
+                {
+
+                    dataField: 'Day',
+
+                    showGridLines: false
+
+                },
+
+            colorScheme: 'scheme01',
+
+            seriesGroups:
+
+                [
+
+                    {
+
+                        type: 'column',
+
+                        columnsGapPercent: 30,
+
+                        seriesGapPercent: 0,
+
+                        valueAxis:
+
+                        {
+
+                            minValue: 0,
+
+                            maxValue: 100,
+
+                            unitInterval: 10,
+
+                            description: 'Time in minutes'
+
+                        },
+
+                        series: [
+
+                                { dataField: 'Keith', displayText: 'Keith'},
+
+                                { dataField: 'Erica', displayText: 'Erica'},
+
+                                { dataField: 'George', displayText: 'George'}
+
+                            ]
+
+                    }
+
+                ]
+
+        };
+
+        // select the chartContainer DIV element and render the chart.
+        $('#chartContainer').jqxChart(settings);
+
+    });
+</script>
+</head>
+<body style="background:white;">
+
+	<div id='chartContainer' style="width:600px; height: 400px"/>
+
+</body>
+</html>

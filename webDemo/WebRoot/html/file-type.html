@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+<script type="text/javascript" src="../scripts/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../scripts/jquery/plugin/checkuploadfile.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(":file").bind("change",function(){  
+		 $(this).fileTypeJudge("photo");  
+	})
+});
+
+</script>
+ <body>
+	<form>
+		<input type="file" name="pic"  />
+	</form>
+ </body>
+</html>

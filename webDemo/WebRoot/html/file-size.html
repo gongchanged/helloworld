@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ <script type="text/javascript" src="../scripts/jquery/jquery-1.9.1.js"></script>
+ </head>
+
+<script type="text/javascript">
+ $(document).ready(function(){
+	$(".css_upload_btn").click(function() {
+		var filepath = $("input[name='myFile']").val();
+		var extStart = filepath.lastIndexOf(".");
+		var ext = filepath.substring(extStart,
+				filepath.length).toUpperCase();
+				alert(ext);
+		if (ext != ".BMP" && ext != ".PNG" && ext != ".GIF"
+				&& ext != ".JPG" && ext != ".JPEG") {
+			alert("图片限于bmp,png,gif,jpeg,jpg格式");
+			return false;
+		}
+		var img = new Image();
+		img.src = filepath;
+		alert("ddd" + img.fileSize);
+			if (img.fileSize > 0) {
+				if (img.fileSize > 3 * 1024) {
+					alert("图片不大于300KB。");
+					return false;
+				}
+			}
+		return true;
+	});
+}); 
+</script>
+<BODY>
+	<form id="#form0" method="post">
+		<input type="file" name="myFile" />
+		<input type="submit" class="css_upload_btn" value="上传"/>
+	</form>
+	
+</BODY>
+ 
+</html>

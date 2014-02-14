@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Dialog - Modal form</title>  
+  <link rel="stylesheet" href="jquery-ui.css" />
+  <script src="../scripts/jquery/jquery-1.9.1.js"></script>
+  <script src="../scripts/jquery/jquery-ui.js"></script> 
+  
+<script>
+$(function(){
+
+	$( "#testDialog" ).dialog({
+      autoOpen: false,
+      height: 380,
+      width: 350,
+      modal: true,
+      buttons: {
+        "确定": function() {
+			var pass1V= $("#pass1").val();
+			var pass2V=$("#pass2").val();
+		 if(checkRegexp(pass1V,pass2V)){
+		 if(pass1V!=pass2V){ alert("两次密码输入不一致!");return false;}
+		 alert("updateOK");
+         $( this ).dialog( "close" );
+		 }else{
+		 alert("请正确输入密码[a-zA-Z0-9] 6-12位");		 
+		 }
+         },
+
+		"取消": function() {
+         $( this ).dialog( "close" );
+          }
+        }
+      });//dialog end;
+
+//验证密码为a-zA-Z0-9 6-12位
+function checkRegexp(passVal1,passVal2){
+	if(passVal1.length<6||passVal1.length>12){return false;}
+	var regexp=/^([0-9a-zA-Z])+$/;	
+	if(!(regexp.test(passVal1))){return false;}
+	return true;
+}
+
+$("#dialogHOpen").click(function(){
+$("#testDialog").dialog("open");
+});//open end;
+
+
+  
+});//jquery end;
+  </script>
+
+ <style type="text/css">
+#testDialog{display:none; height: 600, width: 650,}
+ </style>
+</head>
+
+
+<body>
+ <button id="dialogHOpen">dialogHOpen</button>
+<div id="testDialog">
+请输入新密码:<input type="password" id="pass1"/><br/>
+再次输入密码:<input type="password" id="pass2"><br/>
+</div>
+</body>
+</html>

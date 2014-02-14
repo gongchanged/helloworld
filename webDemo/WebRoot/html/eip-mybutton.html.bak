@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+		 <ul>
+                    <li><a class="button button-rounded button-flat" href="#">press me</a></li>
+                    <li><a class="button button-rounded button-flat-primary" href="#">press me</a>  </li>
+                    <li><a class="button button-rounded button-flat-action" href="#">press me</a>   </li>
+                    <li><a class="button button-rounded button-flat-highlight" href="#">press me</a></li>
+                    <li><a class="button button-rounded button-flat-caution" href="#">press me</a>  </li>
+                    <li><a class="button button-rounded button-flat-royal" href="#">press me</a>  </li>
+                </ul>
+ </body>
+</html>

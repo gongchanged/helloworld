@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dialog demo</title>
+  <link rel="stylesheet" href="../scripts/jquery/css/jquery-ui.css">
+  <script src="../scripts/jquery/jquery-1.9.1.js"></script>
+  <script src="../scripts/jquery/jquery-ui.js"></script>
+</head>
+<body>
+ 
+<button id="opener">open the dialog</button>
+<div id="dialog" title="Dialog Title">I'm a dialog</div>
+ 
+<script>
+$( "#dialog" ).dialog({ autoOpen: false ,width:500,height:460 });
+$( "#opener" ).click(function() {
+  $( "#dialog" ).dialog( "open" );
+});	
+</script>
+ 
+</body>
+</html>

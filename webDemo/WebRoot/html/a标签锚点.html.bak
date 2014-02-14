@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+......
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#foot a").click(function(){//可替换为：$(".yjw").click(function(){
+        var href = $(this).attr("href");
+        var pos = $(href).offset().top;
+        $("html,body").animate({scrollTop: pos}, 1000);
+        return false;
+    });
+});
+</script>
+</head>
+<body>
+<div id="top">
+    ......
+</div>
+
+......
+
+<div id="foot">
+    <a href="#top" class="yjw">点此平滑回到顶部</a>
+</div>
